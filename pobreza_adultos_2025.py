@@ -14,8 +14,9 @@ Definiciones:
   No terminó secund.  P301A = 1-5 (sin nivel a secundaria incompleta) o 12 (básica especial)
 
 Ponderación por persona:
-  FACTORA07  factor de población del módulo 300 (recomendado)
-  FACTOR07   factor del hogar; reproduce las cifras del gráfico original
+  FACTOR07   igual a FACPOB07 (factor de población del módulo 200) en 2025; es el
+             que usa el INEI para la pobreza (25.7 %) y reproduce el gráfico original
+  FACTORA07  factor del módulo 300 ajustado por grupos de edad (sensibilidad)
 
 Datos: enaho-2025/ (Sumaria, módulo 300 reducido).
 Uso:   python pobreza_adultos_2025.py
