@@ -1,8 +1,8 @@
 """
 Gráfico de íconos "La pobreza en adultos en el Perú" (2025): si los adultos pobres
 fueran 50, cuántos viven en zona rural, tienen lengua materna nativa, no terminaron
-la secundaria y tienen una cuarta característica (y sus combinaciones). Se genera
-una versión por cada cuarta característica en VARIANTES.
+la secundaria y tienen otras características (y sus combinaciones). Se genera una
+versión por cada entrada de VARIANTES.
 
 Cifras: adultos de 25+ años en hogares pobres, ponderados con FACTOR07 (= FACPOB07),
 calculadas con pobreza_adultos_2025.py.
@@ -22,24 +22,26 @@ SALIDA = Path(__file__).resolve().parent / "resultados"
 PESO = "factor07"
 
 TEAL, AMARILLO, AZUL, ROJO, GRIS = "#14A7A7", "#F2B705", "#3F51A3", "#E2294F", "#D3D3CF"
-TINTA = "#14234B"
+CARBON, TINTA = "#3A3A3A", "#14234B"
 
-CLAVES = ["rural", "nativa", "sin_secundaria", "extra"]
-COLORES = [TEAL, AZUL, ROJO, AMARILLO]
-
-# Cuarta característica (amarillo): nombre de archivo, etiqueta y nota
-VARIANTES = {
-    "lima": ("Vive en Lima Metropolitana", ""),
-    "sin_programa": ("Su hogar no recibe ningún\nprograma social",
-                     "Programas: Pensión 65, Juntos, Vaso de Leche y Qali Warma / Wasi Mikuna. "
-                     "Se excluyen los hogares sin respuesta al módulo de programas sociales.\n"),
-    "pobreza_extrema": ("Está en pobreza extrema", ""),
+# característica: (etiqueta, color)
+CARACTERISTICAS = {
+    "rural": ("Vive en zona rural", TEAL),
+    "lima": ("Vive en Lima Metropolitana", AMARILLO),
+    "nativa": ("Lengua materna quechua, aimara\nu otra nativa", AZUL),
+    "sin_secundaria": ("No terminó la secundaria", ROJO),
+    "sin_programa": ("Su hogar no recibe ningún\nprograma social", AMARILLO),
+    "pobreza_extrema": ("Está en pobreza extrema", CARBON),
 }
+NOTA_PROGRAMAS = ("Programas: Pensión 65, Juntos, Vaso de Leche y Qali Warma / Wasi Mikuna. "
+                  "Se excluyen los hogares sin respuesta al módulo de programas sociales.\n")
 
-
-def colores(clave):
-    c = [col for activo, col in zip(clave, COLORES) if activo]
-    return c or [GRIS]
+# versión: características que se agregan a rural, nativa y sin secundaria
+VARIANTES = {
+    "lima": ["lima"],
+    "sin_programa_pobreza_extrema": ["sin_programa", "pobreza_extrema"],
+}
+BASE = ["rural", "nativa", "sin_secundaria"]
 
 
 def icono(ax, x, y, cols, s=1.0):
@@ -94,29 +96,29 @@ def ajustar(combos, pct, objetivo):
     return combos
 
 
-def calcular(variante):
+def calcular(extras):
+    claves = BASE + extras
     d = base.cargar()
     x = d[(d.pobreza < 3) & (d.p208a >= 25)].copy()
-    if variante == "lima":
-        x["extra"] = x.dominio == 8
-    elif variante == "pobreza_extrema":
-        x["extra"] = x.pobreza == 1
-    else:
+    x["lima"] = x.dominio == 8
+    x["pobreza_extrema"] = x.pobreza == 1
+    if "sin_programa" in extras:
         x = x.merge(sin_programa(), on=base.LLAVE, how="left").dropna(subset=["sin_programa"])
-        x["extra"] = x.sin_programa == 1
+        x["sin_programa"] = x.sin_programa == 1
 
-    w = x.groupby(CLAVES)[PESO].sum()
+    w = x.groupby(claves)[PESO].sum()
     w = w[w > 0]
-    # rurales primero, luego los que tienen la cuarta característica; grises al final
-    orden = sorted(w.index, key=lambda k: tuple(not v for v in (k[0], k[3], k[1], k[2])))
+    # rurales primero, luego por las características agregadas; grises al final
+    prioridad = [0] + list(range(3, len(claves))) + [1, 2]
+    orden = sorted(w.index, key=lambda k: tuple(not k[i] for i in prioridad))
     pct = 100 * w.reindex(orden) / w.sum()
     combos = ajustar(dict(zip(orden, base.de_50(pct.reset_index(drop=True)))), pct,
-                     {i: round(np.average(x[c], weights=x[PESO]) * 50) for i, c in enumerate(CLAVES)})
+                     {i: round(np.average(x[c], weights=x[PESO]) * 50) for i, c in enumerate(claves)})
     totales = {c: (sum(n for k, n in combos.items() if k[i]),
-                   100 * np.average(x[c], weights=x[PESO])) for i, c in enumerate(CLAVES)}
-    ninguna = (False,) * 4
+                   100 * np.average(x[c], weights=x[PESO])) for i, c in enumerate(claves)}
+    ninguna = (False,) * len(claves)
     totales["ninguna"] = (combos.get(ninguna, 0), pct.get(ninguna, 0))
-    return combos, totales
+    return claves, combos, totales
 
 
 def main():
@@ -126,8 +128,8 @@ def main():
 
 
 def dibujar(variante):
-    etiqueta_extra, nota_extra = VARIANTES[variante]
-    combos, tot = calcular(variante)
+    claves, combos, tot = calcular(VARIANTES[variante])
+    nota_extra = NOTA_PROGRAMAS if "sin_programa" in claves else ""
 
     fig = plt.figure(figsize=(14, 7.6), facecolor="white")
     ax = fig.add_axes([0.03, 0.1, 0.58, 0.82])
@@ -140,7 +142,8 @@ def dibujar(variante):
     for clave, n in combos.items():
         for _ in range(n):
             fila, col = divmod(k, 10)
-            icono(ax, col * 1.6, 8.4 - fila * 2.1, colores(clave))
+            cols = [CARACTERISTICAS[c][1] for c, activo in zip(claves, clave) if activo]
+            icono(ax, col * 1.6, 8.4 - fila * 2.1, cols or [GRIS])
             k += 1
 
     # Leyenda
@@ -151,14 +154,10 @@ def dibujar(variante):
     lg.add_patch(Rectangle((0, 8.35), 10, 1.5, color=TINTA, lw=0))
     lg.text(5, 9.1, "Si los adultos en condición de pobreza\nen el Perú fueran solo 50:",
             ha="center", va="center", fontsize=13, color="white", weight="bold")
-    items = [
-        (TEAL, "Vive en zona rural", tot["rural"]),
-        (AZUL, "Lengua materna quechua, aimara\nu otra nativa", tot["nativa"]),
-        (ROJO, "No terminó la secundaria", tot["sin_secundaria"]),
-        (AMARILLO, etiqueta_extra, tot["extra"]),
-        (GRIS, "Ninguna de las anteriores", tot["ninguna"]),
-    ]
-    y = 7.3
+    items = [(CARACTERISTICAS[c][1], CARACTERISTICAS[c][0], tot[c]) for c in claves]
+    items.append((GRIS, "Ninguna de las anteriores", tot["ninguna"]))
+    paso = 7.0 / len(items)
+    y = 7.4
     for color, texto, (n, pct) in items:
         lg.add_patch(Rectangle((0.1, y - 0.28), 0.55, 0.55, color=color, lw=0))
         lg.text(0.95, y, texto, va="center", fontsize=11.5, color=TINTA)
@@ -166,7 +165,7 @@ def dibujar(variante):
                 weight="bold")
         lg.text(9.9, y - 0.5, f"({pct:.0f} %)", va="center", ha="right", fontsize=9.5,
                 color="#777")
-        y -= 1.45
+        y -= paso
     lg.text(0.1, y + 0.35,
             "Un ícono con varios colores reúne varias\ncaracterísticas.",
             va="top", fontsize=9.5, color="#555", style="italic")
