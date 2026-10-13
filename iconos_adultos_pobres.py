@@ -34,7 +34,8 @@ CARACTERISTICAS = {
     "pobreza_extrema": ("Está en pobreza extrema", CARBON),
 }
 NOTA_PROGRAMAS = ("Programas: Pensión 65, Juntos, Vaso de Leche y Qali Warma / Wasi Mikuna. "
-                  "Se excluyen los hogares sin respuesta al módulo de programas sociales.\n")
+                  "Para los hogares sin respuesta a ese módulo (14 %) se usa la tasa de hogares con el "
+                  "mismo perfil.\n")
 
 # versión: características que se agregan a rural, nativa y sin secundaria
 VARIANTES = {
@@ -96,6 +97,25 @@ def ajustar(combos, pct, objetivo):
     return combos
 
 
+def imputar_sin_programa(x):
+    """Mantiene en la base a quienes no respondieron el módulo 700: a cada uno se le asigna
+    la tasa de 'no recibe programas' de los que sí respondieron y tienen su mismo perfil
+    (rural, Lima, lengua nativa, secundaria y pobreza extrema). Cada no respondiente se
+    divide en dos filas (recibe / no recibe) con su peso repartido según esa tasa."""
+    celdas = ["rural", "lima", "nativa", "sin_secundaria", "pobreza_extrema"]
+    resp = x[x.sin_programa.notna()]
+    tasa = (resp.assign(wp=resp[PESO] * resp.sin_programa).groupby(celdas)
+            .agg(wp=("wp", "sum"), w=(PESO, "sum")))
+    tasa = (tasa.wp / tasa.w).rename("tasa")
+    nr = x[x.sin_programa.isna()].join(tasa, on=celdas)
+    nr["tasa"] = nr.tasa.fillna(np.average(resp.sin_programa, weights=resp[PESO]))
+    si = nr.assign(sin_programa=1.0, **{PESO: nr[PESO] * nr.tasa})
+    no = nr.assign(sin_programa=0.0, **{PESO: nr[PESO] * (1 - nr.tasa)})
+    x = pd.concat([resp, si.drop(columns="tasa"), no.drop(columns="tasa")], ignore_index=True)
+    x["sin_programa"] = x.sin_programa == 1
+    return x
+
+
 def calcular(extras):
     claves = BASE + extras
     d = base.cargar()
@@ -103,8 +123,7 @@ def calcular(extras):
     x["lima"] = x.dominio == 8
     x["pobreza_extrema"] = x.pobreza == 1
     if "sin_programa" in extras:
-        x = x.merge(sin_programa(), on=base.LLAVE, how="left").dropna(subset=["sin_programa"])
-        x["sin_programa"] = x.sin_programa == 1
+        x = imputar_sin_programa(x.merge(sin_programa(), on=base.LLAVE, how="left"))
 
     w = x.groupby(claves)[PESO].sum()
     w = w[w > 0]
