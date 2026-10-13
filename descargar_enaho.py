@@ -4,8 +4,9 @@ ENAHO anual, usando el paquete inei-microdatos, y los descomprime en enaho-AAAA/
 
 Uso:
     pip install inei-microdatos
-    python descargar_enaho.py               # 2020-2024 (por defecto)
-    python descargar_enaho.py 2020 2025     # rango de años
+    python descargar_enaho.py                      # 2020-2024, módulos 34 y 37
+    python descargar_enaho.py 2020 2025            # rango de años
+    python descargar_enaho.py 2025 2025 2 3        # otros módulos (aquí 02 y 03)
 """
 
 import copy
@@ -21,8 +22,8 @@ MODULOS = {"34", "37"}  # Sumaria, Programas Sociales
 FORMATO = "STATA"       # .dta: nombres y tipos de variables consistentes entre años
 
 
-def catalogo(anio_min, anio_max):
-    """Catálogo ENAHO anual (Ene-Dic) restringido a los módulos 34 y 37."""
+def catalogo(anio_min, anio_max, modulos=MODULOS):
+    """Catálogo ENAHO anual (Ene-Dic) restringido a los módulos pedidos."""
     cat = copy.deepcopy(filter_catalog(load_catalog(), survey="enaho",
                                        year_min=anio_min, year_max=anio_max))
     cat = [s for s in cat if "PANEL" not in s["value"].upper()]
@@ -31,14 +32,15 @@ def catalogo(anio_min, anio_max):
             for p in [p for p in periodos if not p.startswith("Anual")]:
                 del periodos[p]
             for d in periodos.values():
-                d["modules"] = [m for m in d["modules"] if m["module_code"] in MODULOS]
+                d["modules"] = [m for m in d["modules"] if m["module_code"] in modulos]
     return cat
 
 
 def main():
     anio_min, anio_max = (int(a) for a in sys.argv[1:3]) if len(sys.argv) > 2 else (2020, 2024)
+    modulos = {m.lstrip("0") for m in sys.argv[3:]} or MODULOS
     tmp = RAIZ / "_descargas"
-    res = download_modules(catalogo(anio_min, anio_max), dest=tmp, fmt=FORMATO,
+    res = download_modules(catalogo(anio_min, anio_max, modulos), dest=tmp, fmt=FORMATO,
                            layout="by-year", workers=2)
     print(res)
 
