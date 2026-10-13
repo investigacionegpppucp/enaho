@@ -1,0 +1,9 @@
+﻿rural,nativa,sin_secundaria,porcentaje,n_muestral,de_50
+True,True,True,7.45,2374,4
+True,True,False,3.02,480,1
+True,False,True,10.15,2389,5
+True,False,False,3.44,649,2
+False,True,True,7.67,861,4
+False,True,False,6.07,499,3
+False,False,True,24.01,2453,12
+False,False,False,38.18,2922,19
