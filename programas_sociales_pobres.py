@@ -225,6 +225,69 @@ def grafico_apilado(tab, poblacion="Pobres (total)", sufijo="pobres"):
     plt.close(fig)
 
 
+def exportar_excel(tab):
+    """Excel con los datos del gráfico de líneas (hogares) para armarlo a mano."""
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+    from openpyxl.utils import get_column_letter
+
+    series = list(PROGRAMAS) + [NINGUNO]
+    fuente = Font(name="Arial", size=10)
+    negrita = Font(name="Arial", size=10, bold=True)
+    cabecera = PatternFill("solid", fgColor="D9D9D9")
+    linea = Border(bottom=Side(style="thin", color="808080"))
+    wb = Workbook()
+    wb.remove(wb.active)
+
+    for poblacion, hoja in [("Pobres (total)", "Hogares pobres"),
+                            ("Pobres extremos", "Hogares pobres extremos")]:
+        ws = wb.create_sheet(hoja)
+        t = tab[(tab.poblacion == poblacion) & (tab.ponderacion == "hogar")]
+        anios = sorted(t.anio.unique())
+        tv = t.set_index(["indicador", "anio"])
+        ws["A1"] = f"% de {hoja.lower()} que recibe cada programa social ({anios[0]}–{anios[-1]})"
+        ws["A1"].font = Font(name="Arial", size=12, bold=True)
+
+        ws.cell(3, 1, "Programa").font = negrita
+        for j, a in enumerate(anios, start=2):
+            ws.cell(3, j, str(a)).font = negrita
+        for c in ws[3]:
+            c.fill, c.border = cabecera, linea
+            c.alignment = Alignment(horizontal="center")
+        for i, s in enumerate(series, start=4):
+            ws.cell(i, 1, s).font = fuente
+            for j, a in enumerate(anios, start=2):
+                c = ws.cell(i, j, tv.loc[(s, a), "porcentaje"] / 100)
+                c.number_format, c.font = "0.0%", fuente
+
+        fila = 4 + len(series) + 1
+        ws.cell(fila, 1, "N° de hogares en la muestra").font = Font(name="Arial", size=9, italic=True)
+        for j, a in enumerate(anios, start=2):
+            c = ws.cell(fila, j, int(tv.loc[(NINGUNO, a), "n_muestral_hogares"]))
+            c.number_format, c.font = "#,##0", Font(name="Arial", size=9, italic=True)
+
+        notas = [
+            "Notas:",
+            "Población: hogares en pobreza según POBREZA de Sumaria"
+            + (" (1 = pobre extremo)." if poblacion == "Pobres extremos" else " (1 = pobre extremo, 2 = pobre no extremo)."),
+            "Ponderado por hogar con FACTOR07. Se excluyen los hogares sin respuesta al módulo 700.",
+            "Un hogar puede recibir más de un programa: los porcentajes no suman 100 %.",
+            "Pensión 65 = P710_05, Juntos = P710_04 (últimos 3 años); Vaso de Leche = P701_01, "
+            "Qali Warma / Wasi Mikuna = P701_03 o P701_04 (últimos 3 meses).",
+            "Fuente: INEI, ENAHO 2020–2025, Sumaria y módulo 700 (Programas Sociales). "
+            "Generado con programas_sociales_pobres.py.",
+        ]
+        for k, n in enumerate(notas, start=fila + 2):
+            ws.cell(k, 1, n).font = negrita if k == fila + 2 else Font(name="Arial", size=9)
+
+        ws.column_dimensions["A"].width = 28
+        for j in range(2, len(anios) + 2):
+            ws.column_dimensions[get_column_letter(j)].width = 9
+        ws.freeze_panes = "B4"
+
+    wb.save(SALIDA / "lineas_hogares_pobres.xlsx")
+
+
 def main():
     SALIDA.mkdir(exist_ok=True)
     anios = [a for a in ANIOS if (RAIZ / f"enaho-{a}").is_dir()]
@@ -243,6 +306,7 @@ def main():
         ancha.to_csv(SALIDA / f"pobres_por_{unidad}_ancha.csv", encoding="utf-8-sig")
         print(f"\nPobres, ponderado por {unidad}:\n{ancha.round(1)}")
 
+    exportar_excel(tab)
     grafico_lineas(tab)
     grafico_apilado(tab)
     grafico_lineas(tab, "Pobres extremos", "pobres_extremos")
