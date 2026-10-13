@@ -1,0 +1,541 @@
+﻿anio,poblacion,ponderacion,indicador,porcentaje,n_muestral_hogares,n_muestral_con_indicador
+2020,Pobres (total),hogar,Pensión 65,7.98,7659,773
+2020,Pobres (total),hogar,Juntos,25.37,7659,2563
+2020,Pobres (total),hogar,Vaso de Leche,18.17,7659,1575
+2020,Pobres (total),hogar,Qali Warma / Wasi Mikuna,34.85,7659,3161
+2020,Pobres (total),hogar,No recibe ninguno,44.32,7659,2665
+2020,Pobres (total),hogar,0 programas,44.32,7659,2665
+2020,Pobres (total),hogar,1 programa,32.48,7659,2697
+2020,Pobres (total),hogar,2 programas,16.01,7659,1544
+2020,Pobres (total),hogar,3 o más programas,7.19,7659,753
+2020,Pobres (total),persona,Pensión 65,5.71,7659,773
+2020,Pobres (total),persona,Juntos,27.84,7659,2563
+2020,Pobres (total),persona,Vaso de Leche,20.5,7659,1575
+2020,Pobres (total),persona,Qali Warma / Wasi Mikuna,39.6,7659,3161
+2020,Pobres (total),persona,No recibe ninguno,41.98,7659,2665
+2020,Pobres (total),persona,0 programas,41.98,7659,2665
+2020,Pobres (total),persona,1 programa,31.54,7659,2697
+2020,Pobres (total),persona,2 programas,17.74,7659,1544
+2020,Pobres (total),persona,3 o más programas,8.74,7659,753
+2020,Pobres extremos,hogar,Pensión 65,7.16,1444,127
+2020,Pobres extremos,hogar,Juntos,41.39,1444,692
+2020,Pobres extremos,hogar,Vaso de Leche,23.1,1444,369
+2020,Pobres extremos,hogar,Qali Warma / Wasi Mikuna,41.56,1444,665
+2020,Pobres extremos,hogar,No recibe ninguno,31.8,1444,344
+2020,Pobres extremos,hogar,0 programas,31.8,1444,344
+2020,Pobres extremos,hogar,1 programa,34.5,1444,539
+2020,Pobres extremos,hogar,2 programas,22.69,1444,375
+2020,Pobres extremos,hogar,3 o más programas,11.0,1444,186
+2020,Pobres extremos,persona,Pensión 65,5.66,1444,127
+2020,Pobres extremos,persona,Juntos,43.61,1444,692
+2020,Pobres extremos,persona,Vaso de Leche,25.65,1444,369
+2020,Pobres extremos,persona,Qali Warma / Wasi Mikuna,46.37,1444,665
+2020,Pobres extremos,persona,No recibe ninguno,29.1,1444,344
+2020,Pobres extremos,persona,0 programas,29.1,1444,344
+2020,Pobres extremos,persona,1 programa,33.63,1444,539
+2020,Pobres extremos,persona,2 programas,24.48,1444,375
+2020,Pobres extremos,persona,3 o más programas,12.79,1444,186
+2020,Pobres no extremos,hogar,Pensión 65,8.13,6215,646
+2020,Pobres no extremos,hogar,Juntos,22.45,6215,1871
+2020,Pobres no extremos,hogar,Vaso de Leche,17.27,6215,1206
+2020,Pobres no extremos,hogar,Qali Warma / Wasi Mikuna,33.63,6215,2496
+2020,Pobres no extremos,hogar,No recibe ninguno,46.6,6215,2321
+2020,Pobres no extremos,hogar,0 programas,46.6,6215,2321
+2020,Pobres no extremos,hogar,1 programa,32.11,6215,2158
+2020,Pobres no extremos,hogar,2 programas,14.79,6215,1169
+2020,Pobres no extremos,hogar,3 o más programas,6.5,6215,567
+2020,Pobres no extremos,persona,Pensión 65,5.72,6215,646
+2020,Pobres no extremos,persona,Juntos,24.58,6215,1871
+2020,Pobres no extremos,persona,Vaso de Leche,19.43,6215,1206
+2020,Pobres no extremos,persona,Qali Warma / Wasi Mikuna,38.19,6215,2496
+2020,Pobres no extremos,persona,No recibe ninguno,44.64,6215,2321
+2020,Pobres no extremos,persona,0 programas,44.64,6215,2321
+2020,Pobres no extremos,persona,1 programa,31.11,6215,2158
+2020,Pobres no extremos,persona,2 programas,16.35,6215,1169
+2020,Pobres no extremos,persona,3 o más programas,7.9,6215,567
+2020,No pobres,hogar,Pensión 65,5.82,26283,1878
+2020,No pobres,hogar,Juntos,7.31,26283,2383
+2020,No pobres,hogar,Vaso de Leche,6.61,26283,1766
+2020,No pobres,hogar,Qali Warma / Wasi Mikuna,16.84,26283,5280
+2020,No pobres,hogar,No recibe ninguno,72.12,26283,17847
+2020,No pobres,hogar,0 programas,72.12,26283,17847
+2020,No pobres,hogar,1 programa,20.73,26283,6101
+2020,No pobres,hogar,2 programas,5.64,26283,1820
+2020,No pobres,hogar,3 o más programas,1.5,26283,515
+2020,No pobres,persona,Pensión 65,4.01,26283,1878
+2020,No pobres,persona,Juntos,9.35,26283,2383
+2020,No pobres,persona,Vaso de Leche,8.96,26283,1766
+2020,No pobres,persona,Qali Warma / Wasi Mikuna,23.47,26283,5280
+2020,No pobres,persona,No recibe ninguno,66.39,26283,17847
+2020,No pobres,persona,0 programas,66.39,26283,17847
+2020,No pobres,persona,1 programa,23.78,26283,6101
+2020,No pobres,persona,2 programas,7.58,26283,1820
+2020,No pobres,persona,3 o más programas,2.26,26283,515
+2020,Total hogares,hogar,Pensión 65,6.33,33942,2651
+2020,Total hogares,hogar,Juntos,11.58,33942,4946
+2020,Total hogares,hogar,Vaso de Leche,9.34,33942,3341
+2020,Total hogares,hogar,Qali Warma / Wasi Mikuna,21.1,33942,8441
+2020,Total hogares,hogar,No recibe ninguno,65.55,33942,20512
+2020,Total hogares,hogar,0 programas,65.55,33942,20512
+2020,Total hogares,hogar,1 programa,23.51,33942,8798
+2020,Total hogares,hogar,2 programas,8.09,33942,3364
+2020,Total hogares,hogar,3 o más programas,2.85,33942,1268
+2020,Total hogares,persona,Pensión 65,4.53,33942,2651
+2020,Total hogares,persona,Juntos,15.0,33942,4946
+2020,Total hogares,persona,Vaso de Leche,12.49,33942,3341
+2020,Total hogares,persona,Qali Warma / Wasi Mikuna,28.4,33942,8441
+2020,Total hogares,persona,No recibe ninguno,58.93,33942,20512
+2020,Total hogares,persona,0 programas,58.93,33942,20512
+2020,Total hogares,persona,1 programa,26.15,33942,8798
+2020,Total hogares,persona,2 programas,10.68,33942,3364
+2020,Total hogares,persona,3 o más programas,4.24,33942,1268
+2021,Pobres (total),hogar,Pensión 65,10.39,6182,768
+2021,Pobres (total),hogar,Juntos,22.88,6182,1839
+2021,Pobres (total),hogar,Vaso de Leche,21.91,6182,1501
+2021,Pobres (total),hogar,Qali Warma / Wasi Mikuna,47.13,6182,3239
+2021,Pobres (total),hogar,No recibe ninguno,35.27,6182,1706
+2021,Pobres (total),hogar,0 programas,35.27,6182,1706
+2021,Pobres (total),hogar,1 programa,35.94,6182,2324
+2021,Pobres (total),hogar,2 programas,20.31,6182,1458
+2021,Pobres (total),hogar,3 o más programas,8.48,6182,694
+2021,Pobres (total),persona,Pensión 65,6.6,6182,768
+2021,Pobres (total),persona,Juntos,25.46,6182,1839
+2021,Pobres (total),persona,Vaso de Leche,24.89,6182,1501
+2021,Pobres (total),persona,Qali Warma / Wasi Mikuna,55.38,6182,3239
+2021,Pobres (total),persona,No recibe ninguno,31.44,6182,1706
+2021,Pobres (total),persona,0 programas,31.44,6182,1706
+2021,Pobres (total),persona,1 programa,35.47,6182,2324
+2021,Pobres (total),persona,2 programas,22.81,6182,1458
+2021,Pobres (total),persona,3 o más programas,10.28,6182,694
+2021,Pobres extremos,hogar,Pensión 65,11.44,1115,132
+2021,Pobres extremos,hogar,Juntos,38.57,1115,493
+2021,Pobres extremos,hogar,Vaso de Leche,25.84,1115,324
+2021,Pobres extremos,hogar,Qali Warma / Wasi Mikuna,59.45,1115,694
+2021,Pobres extremos,hogar,No recibe ninguno,22.61,1115,204
+2021,Pobres extremos,hogar,0 programas,22.61,1115,204
+2021,Pobres extremos,hogar,1 programa,34.05,1115,379
+2021,Pobres extremos,hogar,2 programas,29.25,1115,340
+2021,Pobres extremos,hogar,3 o más programas,14.09,1115,192
+2021,Pobres extremos,persona,Pensión 65,7.22,1115,132
+2021,Pobres extremos,persona,Juntos,43.56,1115,493
+2021,Pobres extremos,persona,Vaso de Leche,28.97,1115,324
+2021,Pobres extremos,persona,Qali Warma / Wasi Mikuna,68.03,1115,694
+2021,Pobres extremos,persona,No recibe ninguno,19.07,1115,204
+2021,Pobres extremos,persona,0 programas,19.07,1115,204
+2021,Pobres extremos,persona,1 programa,31.92,1115,379
+2021,Pobres extremos,persona,2 programas,31.86,1115,340
+2021,Pobres extremos,persona,3 o más programas,17.15,1115,192
+2021,Pobres no extremos,hogar,Pensión 65,10.19,5067,636
+2021,Pobres no extremos,hogar,Juntos,20.01,5067,1346
+2021,Pobres no extremos,hogar,Vaso de Leche,21.19,5067,1177
+2021,Pobres no extremos,hogar,Qali Warma / Wasi Mikuna,44.87,5067,2545
+2021,Pobres no extremos,hogar,No recibe ninguno,37.58,5067,1502
+2021,Pobres no extremos,hogar,0 programas,37.58,5067,1502
+2021,Pobres no extremos,hogar,1 programa,36.29,5067,1945
+2021,Pobres no extremos,hogar,2 programas,18.67,5067,1118
+2021,Pobres no extremos,hogar,3 o más programas,7.46,5067,502
+2021,Pobres no extremos,persona,Pensión 65,6.48,5067,636
+2021,Pobres no extremos,persona,Juntos,21.89,5067,1346
+2021,Pobres no extremos,persona,Vaso de Leche,24.09,5067,1177
+2021,Pobres no extremos,persona,Qali Warma / Wasi Mikuna,52.9,5067,2545
+2021,Pobres no extremos,persona,No recibe ninguno,33.87,5067,1502
+2021,Pobres no extremos,persona,0 programas,33.87,5067,1502
+2021,Pobres no extremos,persona,1 programa,36.16,5067,1945
+2021,Pobres no extremos,persona,2 programas,21.03,5067,1118
+2021,Pobres no extremos,persona,3 o más programas,8.93,5067,502
+2021,No pobres,hogar,Pensión 65,6.07,26820,1982
+2021,No pobres,hogar,Juntos,7.44,26820,2203
+2021,No pobres,hogar,Vaso de Leche,7.32,26820,2057
+2021,No pobres,hogar,Qali Warma / Wasi Mikuna,21.52,26820,6447
+2021,No pobres,hogar,No recibe ninguno,67.49,26820,17174
+2021,No pobres,hogar,0 programas,67.49,26820,17174
+2021,No pobres,hogar,1 programa,24.22,26820,7101
+2021,No pobres,hogar,2 programas,6.79,26820,2059
+2021,No pobres,hogar,3 o más programas,1.51,26820,486
+2021,No pobres,persona,Pensión 65,3.94,26820,1982
+2021,No pobres,persona,Juntos,9.8,26820,2203
+2021,No pobres,persona,Vaso de Leche,9.55,26820,2057
+2021,No pobres,persona,Qali Warma / Wasi Mikuna,30.08,26820,6447
+2021,No pobres,persona,No recibe ninguno,60.41,26820,17174
+2021,No pobres,persona,0 programas,60.41,26820,17174
+2021,No pobres,persona,1 programa,28.16,26820,7101
+2021,No pobres,persona,2 programas,9.13,26820,2059
+2021,No pobres,persona,3 o más programas,2.3,26820,486
+2021,Total hogares,hogar,Pensión 65,6.95,33002,2750
+2021,Total hogares,hogar,Juntos,10.59,33002,4042
+2021,Total hogares,hogar,Vaso de Leche,10.3,33002,3558
+2021,Total hogares,hogar,Qali Warma / Wasi Mikuna,26.75,33002,9686
+2021,Total hogares,hogar,No recibe ninguno,60.9,33002,18880
+2021,Total hogares,hogar,0 programas,60.9,33002,18880
+2021,Total hogares,hogar,1 programa,26.61,33002,9425
+2021,Total hogares,hogar,2 programas,9.55,33002,3517
+2021,Total hogares,hogar,3 o más programas,2.94,33002,1180
+2021,Total hogares,persona,Pensión 65,4.64,33002,2750
+2021,Total hogares,persona,Juntos,13.92,33002,4042
+2021,Total hogares,persona,Vaso de Leche,13.59,33002,3558
+2021,Total hogares,persona,Qali Warma / Wasi Mikuna,36.74,33002,9686
+2021,Total hogares,persona,No recibe ninguno,52.78,33002,18880
+2021,Total hogares,persona,0 programas,52.78,33002,18880
+2021,Total hogares,persona,1 programa,30.09,33002,9425
+2021,Total hogares,persona,2 programas,12.73,33002,3517
+2021,Total hogares,persona,3 o más programas,4.4,33002,1180
+2022,Pobres (total),hogar,Pensión 65,12.39,6703,972
+2022,Pobres (total),hogar,Juntos,20.42,6703,1701
+2022,Pobres (total),hogar,Vaso de Leche,22.2,6703,1586
+2022,Pobres (total),hogar,Qali Warma / Wasi Mikuna,47.02,6703,3419
+2022,Pobres (total),hogar,No recibe ninguno,33.43,6703,1876
+2022,Pobres (total),hogar,0 programas,33.43,6703,1876
+2022,Pobres (total),hogar,1 programa,38.35,6703,2628
+2022,Pobres (total),hogar,2 programas,21.28,6703,1572
+2022,Pobres (total),hogar,3 o más programas,6.95,6703,627
+2022,Pobres (total),persona,Pensión 65,8.52,6703,972
+2022,Pobres (total),persona,Juntos,23.55,6703,1701
+2022,Pobres (total),persona,Vaso de Leche,26.35,6703,1586
+2022,Pobres (total),persona,Qali Warma / Wasi Mikuna,56.17,6703,3419
+2022,Pobres (total),persona,No recibe ninguno,28.82,6703,1876
+2022,Pobres (total),persona,0 programas,28.82,6703,1876
+2022,Pobres (total),persona,1 programa,37.39,6703,2628
+2022,Pobres (total),persona,2 programas,24.61,6703,1572
+2022,Pobres (total),persona,3 o más programas,9.19,6703,627
+2022,Pobres extremos,hogar,Pensión 65,16.66,1465,250
+2022,Pobres extremos,hogar,Juntos,30.93,1465,501
+2022,Pobres extremos,hogar,Vaso de Leche,30.47,1465,470
+2022,Pobres extremos,hogar,Qali Warma / Wasi Mikuna,53.39,1465,811
+2022,Pobres extremos,hogar,No recibe ninguno,23.33,1465,298
+2022,Pobres extremos,hogar,0 programas,23.33,1465,298
+2022,Pobres extremos,hogar,1 programa,35.24,1465,521
+2022,Pobres extremos,hogar,2 programas,28.45,1465,433
+2022,Pobres extremos,hogar,3 o más programas,12.99,1465,213
+2022,Pobres extremos,persona,Pensión 65,11.3,1465,250
+2022,Pobres extremos,persona,Juntos,35.67,1465,501
+2022,Pobres extremos,persona,Vaso de Leche,36.45,1465,470
+2022,Pobres extremos,persona,Qali Warma / Wasi Mikuna,64.34,1465,811
+2022,Pobres extremos,persona,No recibe ninguno,18.31,1465,298
+2022,Pobres extremos,persona,0 programas,18.31,1465,298
+2022,Pobres extremos,persona,1 programa,32.71,1465,521
+2022,Pobres extremos,persona,2 programas,32.51,1465,433
+2022,Pobres extremos,persona,3 o más programas,16.47,1465,213
+2022,Pobres no extremos,hogar,Pensión 65,11.45,5238,722
+2022,Pobres no extremos,hogar,Juntos,18.08,5238,1200
+2022,Pobres no extremos,hogar,Vaso de Leche,20.37,5238,1116
+2022,Pobres no extremos,hogar,Qali Warma / Wasi Mikuna,45.6,5238,2608
+2022,Pobres no extremos,hogar,No recibe ninguno,35.67,5238,1578
+2022,Pobres no extremos,hogar,0 programas,35.67,5238,1578
+2022,Pobres no extremos,hogar,1 programa,39.04,5238,2107
+2022,Pobres no extremos,hogar,2 programas,19.68,5238,1139
+2022,Pobres no extremos,hogar,3 o más programas,5.61,5238,414
+2022,Pobres no extremos,persona,Pensión 65,7.87,5238,722
+2022,Pobres no extremos,persona,Juntos,20.71,5238,1200
+2022,Pobres no extremos,persona,Vaso de Leche,23.98,5238,1116
+2022,Pobres no extremos,persona,Qali Warma / Wasi Mikuna,54.25,5238,2608
+2022,Pobres no extremos,persona,No recibe ninguno,31.29,5238,1578
+2022,Pobres no extremos,persona,0 programas,31.29,5238,1578
+2022,Pobres no extremos,persona,1 programa,38.49,5238,2107
+2022,Pobres no extremos,persona,2 programas,22.75,5238,1139
+2022,Pobres no extremos,persona,3 o más programas,7.47,5238,414
+2022,No pobres,hogar,Pensión 65,6.13,25891,1937
+2022,No pobres,hogar,Juntos,6.8,25891,2032
+2022,No pobres,hogar,Vaso de Leche,7.84,25891,2031
+2022,No pobres,hogar,Qali Warma / Wasi Mikuna,21.44,25891,6271
+2022,No pobres,hogar,No recibe ninguno,67.71,25891,16596
+2022,No pobres,hogar,0 programas,67.71,25891,16596
+2022,No pobres,hogar,1 programa,24.0,25891,6806
+2022,No pobres,hogar,2 programas,6.72,25891,2017
+2022,No pobres,hogar,3 o más programas,1.58,25891,472
+2022,No pobres,persona,Pensión 65,4.18,25891,1937
+2022,No pobres,persona,Juntos,8.95,25891,2032
+2022,No pobres,persona,Vaso de Leche,10.43,25891,2031
+2022,No pobres,persona,Qali Warma / Wasi Mikuna,30.13,25891,6271
+2022,No pobres,persona,No recibe ninguno,60.37,25891,16596
+2022,No pobres,persona,0 programas,60.37,25891,16596
+2022,No pobres,persona,1 programa,28.06,25891,6806
+2022,No pobres,persona,2 programas,9.15,25891,2017
+2022,No pobres,persona,3 o más programas,2.42,25891,472
+2022,Total hogares,hogar,Pensión 65,7.49,32594,2909
+2022,Total hogares,hogar,Juntos,9.77,32594,3733
+2022,Total hogares,hogar,Vaso de Leche,10.97,32594,3617
+2022,Total hogares,hogar,Qali Warma / Wasi Mikuna,27.01,32594,9690
+2022,Total hogares,hogar,No recibe ninguno,60.24,32594,18472
+2022,Total hogares,hogar,0 programas,60.24,32594,18472
+2022,Total hogares,hogar,1 programa,27.12,32594,9434
+2022,Total hogares,hogar,2 programas,9.89,32594,3589
+2022,Total hogares,hogar,3 o más programas,2.75,32594,1099
+2022,Total hogares,persona,Pensión 65,5.36,32594,2909
+2022,Total hogares,persona,Juntos,12.91,32594,3733
+2022,Total hogares,persona,Vaso de Leche,14.75,32594,3617
+2022,Total hogares,persona,Qali Warma / Wasi Mikuna,37.19,32594,9690
+2022,Total hogares,persona,No recibe ninguno,51.82,32594,18472
+2022,Total hogares,persona,0 programas,51.82,32594,18472
+2022,Total hogares,persona,1 programa,30.59,32594,9434
+2022,Total hogares,persona,2 programas,13.34,32594,3589
+2022,Total hogares,persona,3 o más programas,4.25,32594,1099
+2023,Pobres (total),hogar,Pensión 65,12.5,6964,1073
+2023,Pobres (total),hogar,Juntos,21.63,6964,1828
+2023,Pobres (total),hogar,Vaso de Leche,21.11,6964,1554
+2023,Pobres (total),hogar,Qali Warma / Wasi Mikuna,46.01,6964,3464
+2023,Pobres (total),hogar,No recibe ninguno,33.34,6964,1927
+2023,Pobres (total),hogar,0 programas,33.34,6964,1927
+2023,Pobres (total),hogar,1 programa,39.41,6964,2822
+2023,Pobres (total),hogar,2 programas,20.13,6964,1570
+2023,Pobres (total),hogar,3 o más programas,7.12,6964,645
+2023,Pobres (total),persona,Pensión 65,8.31,6964,1073
+2023,Pobres (total),persona,Juntos,24.93,6964,1828
+2023,Pobres (total),persona,Vaso de Leche,24.71,6964,1554
+2023,Pobres (total),persona,Qali Warma / Wasi Mikuna,55.58,6964,3464
+2023,Pobres (total),persona,No recibe ninguno,28.77,6964,1927
+2023,Pobres (total),persona,0 programas,28.77,6964,1927
+2023,Pobres (total),persona,1 programa,38.46,6964,2822
+2023,Pobres (total),persona,2 programas,23.55,6964,1570
+2023,Pobres (total),persona,3 o más programas,9.22,6964,645
+2023,Pobres extremos,hogar,Pensión 65,17.65,1702,339
+2023,Pobres extremos,hogar,Juntos,31.76,1702,590
+2023,Pobres extremos,hogar,Vaso de Leche,24.58,1702,457
+2023,Pobres extremos,hogar,Qali Warma / Wasi Mikuna,46.01,1702,847
+2023,Pobres extremos,hogar,No recibe ninguno,26.3,1702,371
+2023,Pobres extremos,hogar,0 programas,26.3,1702,371
+2023,Pobres extremos,hogar,1 programa,38.99,1702,666
+2023,Pobres extremos,hogar,2 programas,23.46,1702,434
+2023,Pobres extremos,hogar,3 o más programas,11.25,1702,231
+2023,Pobres extremos,persona,Pensión 65,11.53,1702,339
+2023,Pobres extremos,persona,Juntos,38.58,1702,590
+2023,Pobres extremos,persona,Vaso de Leche,30.28,1702,457
+2023,Pobres extremos,persona,Qali Warma / Wasi Mikuna,58.45,1702,847
+2023,Pobres extremos,persona,No recibe ninguno,20.49,1702,371
+2023,Pobres extremos,persona,0 programas,20.49,1702,371
+2023,Pobres extremos,persona,1 programa,36.14,1702,666
+2023,Pobres extremos,persona,2 programas,27.98,1702,434
+2023,Pobres extremos,persona,3 o más programas,15.39,1702,231
+2023,Pobres no extremos,hogar,Pensión 65,11.14,5262,734
+2023,Pobres no extremos,hogar,Juntos,18.97,5262,1238
+2023,Pobres no extremos,hogar,Vaso de Leche,20.2,5262,1097
+2023,Pobres no extremos,hogar,Qali Warma / Wasi Mikuna,46.01,5262,2617
+2023,Pobres no extremos,hogar,No recibe ninguno,35.19,5262,1556
+2023,Pobres no extremos,hogar,0 programas,35.19,5262,1556
+2023,Pobres no extremos,hogar,1 programa,39.52,5262,2156
+2023,Pobres no extremos,hogar,2 programas,19.25,5262,1136
+2023,Pobres no extremos,hogar,3 o más programas,6.04,5262,414
+2023,Pobres no extremos,persona,Pensión 65,7.48,5262,734
+2023,Pobres no extremos,persona,Juntos,21.4,5262,1238
+2023,Pobres no extremos,persona,Vaso de Leche,23.28,5262,1097
+2023,Pobres no extremos,persona,Qali Warma / Wasi Mikuna,54.83,5262,2617
+2023,Pobres no extremos,persona,No recibe ninguno,30.91,5262,1556
+2023,Pobres no extremos,persona,0 programas,30.91,5262,1556
+2023,Pobres no extremos,persona,1 programa,39.06,5262,2156
+2023,Pobres no extremos,persona,2 programas,22.4,5262,1136
+2023,Pobres no extremos,persona,3 o más programas,7.62,5262,414
+2023,No pobres,hogar,Pensión 65,6.63,25284,1997
+2023,No pobres,hogar,Juntos,7.67,25284,2261
+2023,No pobres,hogar,Vaso de Leche,7.35,25284,1886
+2023,No pobres,hogar,Qali Warma / Wasi Mikuna,21.48,25284,6095
+2023,No pobres,hogar,No recibe ninguno,66.67,25284,15990
+2023,No pobres,hogar,0 programas,66.67,25284,15990
+2023,No pobres,hogar,1 programa,24.99,25284,6816
+2023,No pobres,hogar,2 programas,6.92,25284,2022
+2023,No pobres,hogar,3 o más programas,1.42,25284,456
+2023,No pobres,persona,Pensión 65,4.54,25284,1997
+2023,No pobres,persona,Juntos,10.2,25284,2261
+2023,No pobres,persona,Vaso de Leche,9.71,25284,1886
+2023,No pobres,persona,Qali Warma / Wasi Mikuna,30.2,25284,6095
+2023,No pobres,persona,No recibe ninguno,59.38,25284,15990
+2023,No pobres,persona,0 programas,59.38,25284,15990
+2023,No pobres,persona,1 programa,28.89,25284,6816
+2023,No pobres,persona,2 programas,9.49,25284,2022
+2023,No pobres,persona,3 o más programas,2.24,25284,456
+2023,Total hogares,hogar,Pensión 65,7.99,32248,3070
+2023,Total hogares,hogar,Juntos,10.9,32248,4089
+2023,Total hogares,hogar,Vaso de Leche,10.54,32248,3440
+2023,Total hogares,hogar,Qali Warma / Wasi Mikuna,27.17,32248,9559
+2023,Total hogares,hogar,No recibe ninguno,58.94,32248,17917
+2023,Total hogares,hogar,0 programas,58.94,32248,17917
+2023,Total hogares,hogar,1 programa,28.33,32248,9638
+2023,Total hogares,hogar,2 programas,9.98,32248,3592
+2023,Total hogares,hogar,3 o más programas,2.74,32248,1101
+2023,Total hogares,persona,Pensión 65,5.63,32248,3070
+2023,Total hogares,persona,Juntos,14.45,32248,4089
+2023,Total hogares,persona,Vaso de Leche,14.04,32248,3440
+2023,Total hogares,persona,Qali Warma / Wasi Mikuna,37.53,32248,9559
+2023,Total hogares,persona,No recibe ninguno,50.54,32248,17917
+2023,Total hogares,persona,0 programas,50.54,32248,17917
+2023,Total hogares,persona,1 programa,31.65,32248,9638
+2023,Total hogares,persona,2 programas,13.55,32248,3592
+2023,Total hogares,persona,3 o más programas,4.26,32248,1101
+2024,Pobres (total),hogar,Pensión 65,16.51,6362,1215
+2024,Pobres (total),hogar,Juntos,24.26,6362,1861
+2024,Pobres (total),hogar,Vaso de Leche,22.16,6362,1495
+2024,Pobres (total),hogar,Qali Warma / Wasi Mikuna,46.29,6362,3164
+2024,Pobres (total),hogar,No recibe ninguno,30.56,6362,1628
+2024,Pobres (total),hogar,0 programas,30.56,6362,1628
+2024,Pobres (total),hogar,1 programa,39.37,6362,2506
+2024,Pobres (total),hogar,2 programas,20.83,6362,1494
+2024,Pobres (total),hogar,3 o más programas,9.24,6362,734
+2024,Pobres (total),persona,Pensión 65,11.84,6362,1215
+2024,Pobres (total),persona,Juntos,28.83,6362,1861
+2024,Pobres (total),persona,Vaso de Leche,26.86,6362,1495
+2024,Pobres (total),persona,Qali Warma / Wasi Mikuna,56.25,6362,3164
+2024,Pobres (total),persona,No recibe ninguno,25.65,6362,1628
+2024,Pobres (total),persona,0 programas,25.65,6362,1628
+2024,Pobres (total),persona,1 programa,37.96,6362,2506
+2024,Pobres (total),persona,2 programas,24.06,6362,1494
+2024,Pobres (total),persona,3 o más programas,12.33,6362,734
+2024,Pobres extremos,hogar,Pensión 65,23.68,1526,378
+2024,Pobres extremos,hogar,Juntos,33.77,1526,565
+2024,Pobres extremos,hogar,Vaso de Leche,28.76,1526,449
+2024,Pobres extremos,hogar,Qali Warma / Wasi Mikuna,48.24,1526,776
+2024,Pobres extremos,hogar,No recibe ninguno,21.54,1526,301
+2024,Pobres extremos,hogar,0 programas,21.54,1526,301
+2024,Pobres extremos,hogar,1 programa,37.75,1526,556
+2024,Pobres extremos,hogar,2 programas,26.14,1526,408
+2024,Pobres extremos,hogar,3 o más programas,14.57,1526,261
+2024,Pobres extremos,persona,Pensión 65,18.09,1526,378
+2024,Pobres extremos,persona,Juntos,41.13,1526,565
+2024,Pobres extremos,persona,Vaso de Leche,36.32,1526,449
+2024,Pobres extremos,persona,Qali Warma / Wasi Mikuna,61.04,1526,776
+2024,Pobres extremos,persona,No recibe ninguno,15.15,1526,301
+2024,Pobres extremos,persona,0 programas,15.15,1526,301
+2024,Pobres extremos,persona,1 programa,34.1,1526,556
+2024,Pobres extremos,persona,2 programas,30.79,1526,408
+2024,Pobres extremos,persona,3 o más programas,19.96,1526,261
+2024,Pobres no extremos,hogar,Pensión 65,14.58,4836,837
+2024,Pobres no extremos,hogar,Juntos,21.7,4836,1296
+2024,Pobres no extremos,hogar,Vaso de Leche,20.38,4836,1046
+2024,Pobres no extremos,hogar,Qali Warma / Wasi Mikuna,45.77,4836,2388
+2024,Pobres no extremos,hogar,No recibe ninguno,32.99,4836,1327
+2024,Pobres no extremos,hogar,0 programas,32.99,4836,1327
+2024,Pobres no extremos,hogar,1 programa,39.81,4836,1950
+2024,Pobres no extremos,hogar,2 programas,19.4,4836,1086
+2024,Pobres no extremos,hogar,3 o más programas,7.8,4836,473
+2024,Pobres no extremos,persona,Pensión 65,10.14,4836,837
+2024,Pobres no extremos,persona,Juntos,25.47,4836,1296
+2024,Pobres no extremos,persona,Vaso de Leche,24.29,4836,1046
+2024,Pobres no extremos,persona,Qali Warma / Wasi Mikuna,54.95,4836,2388
+2024,Pobres no extremos,persona,No recibe ninguno,28.52,4836,1327
+2024,Pobres no extremos,persona,0 programas,28.52,4836,1327
+2024,Pobres no extremos,persona,1 programa,39.01,4836,1950
+2024,Pobres no extremos,persona,2 programas,22.23,4836,1086
+2024,Pobres no extremos,persona,3 o más programas,10.25,4836,473
+2024,No pobres,hogar,Pensión 65,8.2,25027,2379
+2024,No pobres,hogar,Juntos,8.69,25027,2492
+2024,No pobres,hogar,Vaso de Leche,7.7,25027,1965
+2024,No pobres,hogar,Qali Warma / Wasi Mikuna,22.21,25027,6151
+2024,No pobres,hogar,No recibe ninguno,64.39,25027,15272
+2024,No pobres,hogar,0 programas,64.39,25027,15272
+2024,No pobres,hogar,1 programa,26.09,25027,7039
+2024,No pobres,hogar,2 programas,7.87,25027,2209
+2024,No pobres,hogar,3 o más programas,1.64,25027,507
+2024,No pobres,persona,Pensión 65,5.66,25027,2379
+2024,No pobres,persona,Juntos,11.65,25027,2492
+2024,No pobres,persona,Vaso de Leche,9.93,25027,1965
+2024,No pobres,persona,Qali Warma / Wasi Mikuna,31.46,25027,6151
+2024,No pobres,persona,No recibe ninguno,57.2,25027,15272
+2024,No pobres,persona,0 programas,57.2,25027,15272
+2024,No pobres,persona,1 programa,29.55,25027,7039
+2024,No pobres,persona,2 programas,10.68,25027,2209
+2024,No pobres,persona,3 o más programas,2.58,25027,507
+2024,Total hogares,hogar,Pensión 65,10.0,31389,3594
+2024,Total hogares,hogar,Juntos,12.07,31389,4353
+2024,Total hogares,hogar,Vaso de Leche,10.84,31389,3460
+2024,Total hogares,hogar,Qali Warma / Wasi Mikuna,27.44,31389,9315
+2024,Total hogares,hogar,No recibe ninguno,57.05,31389,16900
+2024,Total hogares,hogar,0 programas,57.05,31389,16900
+2024,Total hogares,hogar,1 programa,28.98,31389,9545
+2024,Total hogares,hogar,2 programas,10.68,31389,3703
+2024,Total hogares,hogar,3 o más programas,3.29,31389,1241
+2024,Total hogares,persona,Pensión 65,7.34,31389,3594
+2024,Total hogares,persona,Juntos,16.32,31389,4353
+2024,Total hogares,persona,Vaso de Leche,14.53,31389,3460
+2024,Total hogares,persona,Qali Warma / Wasi Mikuna,38.2,31389,9315
+2024,Total hogares,persona,No recibe ninguno,48.63,31389,16900
+2024,Total hogares,persona,0 programas,48.63,31389,16900
+2024,Total hogares,persona,1 programa,31.83,31389,9545
+2024,Total hogares,persona,2 programas,14.31,31389,3703
+2024,Total hogares,persona,3 o más programas,5.23,31389,1241
+2025,Pobres (total),hogar,Pensión 65,16.81,5759,1156
+2025,Pobres (total),hogar,Juntos,24.27,5759,1701
+2025,Pobres (total),hogar,Vaso de Leche,21.13,5759,1319
+2025,Pobres (total),hogar,Qali Warma / Wasi Mikuna,43.11,5759,2757
+2025,Pobres (total),hogar,No recibe ninguno,32.51,5759,1492
+2025,Pobres (total),hogar,0 programas,32.51,5759,1492
+2025,Pobres (total),hogar,1 programa,38.51,5759,2273
+2025,Pobres (total),hogar,2 programas,20.49,5759,1351
+2025,Pobres (total),hogar,3 o más programas,8.5,5759,643
+2025,Pobres (total),persona,Pensión 65,11.56,5759,1156
+2025,Pobres (total),persona,Juntos,28.48,5759,1701
+2025,Pobres (total),persona,Vaso de Leche,25.92,5759,1319
+2025,Pobres (total),persona,Qali Warma / Wasi Mikuna,52.67,5759,2757
+2025,Pobres (total),persona,No recibe ninguno,28.45,5759,1492
+2025,Pobres (total),persona,0 programas,28.45,5759,1492
+2025,Pobres (total),persona,1 programa,36.52,5759,2273
+2025,Pobres (total),persona,2 programas,23.56,5759,1351
+2025,Pobres (total),persona,3 o más programas,11.47,5759,643
+2025,Pobres extremos,hogar,Pensión 65,22.46,1141,276
+2025,Pobres extremos,hogar,Juntos,33.83,1141,437
+2025,Pobres extremos,hogar,Vaso de Leche,27.01,1141,328
+2025,Pobres extremos,hogar,Qali Warma / Wasi Mikuna,47.81,1141,558
+2025,Pobres extremos,hogar,No recibe ninguno,21.65,1141,224
+2025,Pobres extremos,hogar,0 programas,21.65,1141,224
+2025,Pobres extremos,hogar,1 programa,40.44,1141,434
+2025,Pobres extremos,hogar,2 programas,23.78,1141,294
+2025,Pobres extremos,hogar,3 o más programas,14.14,1141,189
+2025,Pobres extremos,persona,Pensión 65,15.18,1141,276
+2025,Pobres extremos,persona,Juntos,40.68,1141,437
+2025,Pobres extremos,persona,Vaso de Leche,35.75,1141,328
+2025,Pobres extremos,persona,Qali Warma / Wasi Mikuna,60.54,1141,558
+2025,Pobres extremos,persona,No recibe ninguno,16.0,1141,224
+2025,Pobres extremos,persona,0 programas,16.0,1141,224
+2025,Pobres extremos,persona,1 programa,36.98,1141,434
+2025,Pobres extremos,persona,2 programas,26.98,1141,294
+2025,Pobres extremos,persona,3 o más programas,20.04,1141,189
+2025,Pobres no extremos,hogar,Pensión 65,15.56,4618,880
+2025,Pobres no extremos,hogar,Juntos,22.15,4618,1264
+2025,Pobres no extremos,hogar,Vaso de Leche,19.82,4618,991
+2025,Pobres no extremos,hogar,Qali Warma / Wasi Mikuna,42.07,4618,2199
+2025,Pobres no extremos,hogar,No recibe ninguno,34.92,4618,1268
+2025,Pobres no extremos,hogar,0 programas,34.92,4618,1268
+2025,Pobres no extremos,hogar,1 programa,38.08,4618,1839
+2025,Pobres no extremos,hogar,2 programas,19.76,4618,1057
+2025,Pobres no extremos,hogar,3 o más programas,7.24,4618,454
+2025,Pobres no extremos,persona,Pensión 65,10.71,4618,880
+2025,Pobres no extremos,persona,Juntos,25.63,4618,1264
+2025,Pobres no extremos,persona,Vaso de Leche,23.63,4618,991
+2025,Pobres no extremos,persona,Qali Warma / Wasi Mikuna,50.84,4618,2199
+2025,Pobres no extremos,persona,No recibe ninguno,31.35,4618,1268
+2025,Pobres no extremos,persona,0 programas,31.35,4618,1268
+2025,Pobres no extremos,persona,1 programa,36.41,4618,1839
+2025,Pobres no extremos,persona,2 programas,22.76,4618,1057
+2025,Pobres no extremos,persona,3 o más programas,9.48,4618,454
+2025,No pobres,hogar,Pensión 65,9.52,25659,2766
+2025,No pobres,hogar,Juntos,9.34,25659,2752
+2025,No pobres,hogar,Vaso de Leche,7.92,25659,2059
+2025,No pobres,hogar,Qali Warma / Wasi Mikuna,21.74,25659,6270
+2025,No pobres,hogar,No recibe ninguno,63.49,25659,15369
+2025,No pobres,hogar,0 programas,63.49,25659,15369
+2025,No pobres,hogar,1 programa,26.56,25659,7400
+2025,No pobres,hogar,2 programas,7.92,25659,2238
+2025,No pobres,hogar,3 o más programas,2.03,25659,652
+2025,No pobres,persona,Pensión 65,6.73,25659,2766
+2025,No pobres,persona,Juntos,12.24,25659,2752
+2025,No pobres,persona,Vaso de Leche,10.54,25659,2059
+2025,No pobres,persona,Qali Warma / Wasi Mikuna,31.23,25659,6270
+2025,No pobres,persona,No recibe ninguno,56.36,25659,15369
+2025,No pobres,persona,0 programas,56.36,25659,15369
+2025,No pobres,persona,1 programa,29.75,25659,7400
+2025,No pobres,persona,2 programas,10.74,25659,2238
+2025,No pobres,persona,3 o más programas,3.15,25659,652
+2025,Total hogares,hogar,Pensión 65,11.01,31418,3922
+2025,Total hogares,hogar,Juntos,12.39,31418,4453
+2025,Total hogares,hogar,Vaso de Leche,10.62,31418,3378
+2025,Total hogares,hogar,Qali Warma / Wasi Mikuna,26.1,31418,9027
+2025,Total hogares,hogar,No recibe ninguno,57.16,31418,16861
+2025,Total hogares,hogar,0 programas,57.16,31418,16861
+2025,Total hogares,hogar,1 programa,29.0,31418,9673
+2025,Total hogares,hogar,2 programas,10.49,31418,3589
+2025,Total hogares,hogar,3 o más programas,3.35,31418,1295
+2025,Total hogares,persona,Pensión 65,7.96,31418,3922
+2025,Total hogares,persona,Juntos,16.4,31418,4453
+2025,Total hogares,persona,Vaso de Leche,14.48,31418,3378
+2025,Total hogares,persona,Qali Warma / Wasi Mikuna,36.72,31418,9027
+2025,Total hogares,persona,No recibe ninguno,49.21,31418,16861
+2025,Total hogares,persona,0 programas,49.21,31418,16861
+2025,Total hogares,persona,1 programa,31.48,31418,9673
+2025,Total hogares,persona,2 programas,14.02,31418,3589
+2025,Total hogares,persona,3 o más programas,5.28,31418,1295
