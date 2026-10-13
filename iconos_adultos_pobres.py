@@ -1,7 +1,8 @@
 """
 Gráfico de íconos "La pobreza en adultos en el Perú" (2025): si los adultos pobres
-fueran 50, cuántos viven en zona rural o en Lima Metropolitana, tienen lengua
-materna nativa y no terminaron la secundaria (y sus combinaciones).
+fueran 50, cuántos viven en zona rural, tienen lengua materna nativa, no terminaron
+la secundaria y tienen una cuarta característica (y sus combinaciones). Se genera
+una versión por cada cuarta característica en VARIANTES.
 
 Cifras: adultos de 25+ años en hogares pobres, ponderados con FACTOR07 (= FACPOB07),
 calculadas con pobreza_adultos_2025.py.
@@ -12,6 +13,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from matplotlib.patches import Circle, FancyBboxPatch, Rectangle
 
 import pobreza_adultos_2025 as base
@@ -22,22 +24,21 @@ PESO = "factor07"
 TEAL, AMARILLO, AZUL, ROJO, GRIS = "#14A7A7", "#F2B705", "#3F51A3", "#E2294F", "#D3D3CF"
 TINTA = "#14234B"
 
-# Orden de los íconos: rurales, Lima, otras ciudades y al final los grises.
-# Cada clave: (rural, lima, nativa, sin_secundaria)
-ORDEN = [
-    (True, False, True, True), (True, False, False, True), (True, False, True, False),
-    (True, False, False, False),
-    (False, True, True, True), (False, True, False, True), (False, True, True, False),
-    (False, True, False, False),
-    (False, False, True, True), (False, False, False, True), (False, False, True, False),
-    (False, False, False, False),
-]
+CLAVES = ["rural", "nativa", "sin_secundaria", "extra"]
+COLORES = [TEAL, AZUL, ROJO, AMARILLO]
+
+# Cuarta característica (amarillo): nombre de archivo, etiqueta y nota
+VARIANTES = {
+    "lima": ("Vive en Lima Metropolitana", ""),
+    "sin_programa": ("Su hogar no recibe ningún\nprograma social",
+                     "Programas: Pensión 65, Juntos, Vaso de Leche y Qali Warma / Wasi Mikuna. "
+                     "Se excluyen los hogares sin respuesta al módulo de programas sociales.\n"),
+    "pobreza_extrema": ("Está en pobreza extrema", ""),
+}
 
 
 def colores(clave):
-    rural, lima, nativa, sin_sec = clave
-    c = [col for activo, col in [(rural, TEAL), (lima, AMARILLO), (nativa, AZUL), (sin_sec, ROJO)]
-         if activo]
+    c = [col for activo, col in zip(clave, COLORES) if activo]
     return c or [GRIS]
 
 
@@ -55,26 +56,78 @@ def icono(ax, x, y, cols, s=1.0):
             forma.set_clip_path(clip)
 
 
-def calcular():
+def sin_programa():
+    """Hogares que no reciben ninguno de los cuatro programas (NaN si no respondió el 700)."""
+    m = pd.read_csv(base.DATOS / "Enaho01-2025-700.csv", sep=";", encoding="latin1", dtype=str)
+    m.columns = [c.lower().replace("$", "_") for c in m.columns]
+    vars700 = ["p701_01", "p701_03", "p701_04", "p710_04", "p710_05"]
+    for c in vars700:
+        m[c] = pd.to_numeric(m[c].str.strip(), errors="coerce")
+    m["sin_programa"] = (~(m[vars700] == 1).any(axis=1)).astype(float)
+    m.loc[m[vars700].isna().any(axis=1), "sin_programa"] = np.nan
+    return m[base.LLAVE + ["sin_programa"]]
+
+
+def ajustar(combos, pct, objetivo):
+    """Mueve íconos entre combinaciones que difieren en una sola característica hasta que
+    el total de cada característica coincida con su porcentaje redondeado (de 50)."""
+    for _ in range(50):
+        malos = [(i, objetivo[i] - sum(n for k, n in combos.items() if k[i])) for i in objetivo]
+        malos = [(i, dif) for i, dif in malos if dif]
+        if not malos:
+            break
+        i, dif = malos[0]
+        candidatos = []
+        for origen, n in combos.items():
+            if n == 0 or origen[i] == (dif > 0):
+                continue
+            destino = tuple(not v if j == i else v for j, v in enumerate(origen))
+            if destino in combos:
+                # error de redondeo que se acepta al mover un ícono
+                costo = (combos[destino] + 1 - pct[destino] / 2) + (pct[origen] / 2 - (n - 1))
+                candidatos.append((costo, origen, destino))
+        if not candidatos:
+            break
+        _, origen, destino = min(candidatos)
+        combos[origen] -= 1
+        combos[destino] += 1
+    return combos
+
+
+def calcular(variante):
     d = base.cargar()
     x = d[(d.pobreza < 3) & (d.p208a >= 25)].copy()
-    x["lima"] = x.dominio == 8
-    claves = ["rural", "lima", "nativa", "sin_secundaria"]
-    w = x.groupby(claves)[PESO].sum().reindex(ORDEN, fill_value=0)
-    pct = 100 * w / w.sum()
-    cuenta = base.de_50(pct.reset_index(drop=True))
-    combos = dict(zip(ORDEN, cuenta))
-    totales = {}
-    for i, c in enumerate(claves):
-        totales[c] = (sum(n for k, n in combos.items() if k[i]),
-                      100 * np.average(x[c], weights=x[PESO]))
-    totales["ninguna"] = (combos[(False, False, False, False)], pct[(False, False, False, False)])
+    if variante == "lima":
+        x["extra"] = x.dominio == 8
+    elif variante == "pobreza_extrema":
+        x["extra"] = x.pobreza == 1
+    else:
+        x = x.merge(sin_programa(), on=base.LLAVE, how="left").dropna(subset=["sin_programa"])
+        x["extra"] = x.sin_programa == 1
+
+    w = x.groupby(CLAVES)[PESO].sum()
+    w = w[w > 0]
+    # rurales primero, luego los que tienen la cuarta característica; grises al final
+    orden = sorted(w.index, key=lambda k: tuple(not v for v in (k[0], k[3], k[1], k[2])))
+    pct = 100 * w.reindex(orden) / w.sum()
+    combos = ajustar(dict(zip(orden, base.de_50(pct.reset_index(drop=True)))), pct,
+                     {i: round(np.average(x[c], weights=x[PESO]) * 50) for i, c in enumerate(CLAVES)})
+    totales = {c: (sum(n for k, n in combos.items() if k[i]),
+                   100 * np.average(x[c], weights=x[PESO])) for i, c in enumerate(CLAVES)}
+    ninguna = (False,) * 4
+    totales["ninguna"] = (combos.get(ninguna, 0), pct.get(ninguna, 0))
     return combos, totales
 
 
 def main():
     SALIDA.mkdir(exist_ok=True)
-    combos, tot = calcular()
+    for variante in VARIANTES:
+        dibujar(variante)
+
+
+def dibujar(variante):
+    etiqueta_extra, nota_extra = VARIANTES[variante]
+    combos, tot = calcular(variante)
 
     fig = plt.figure(figsize=(14, 7.6), facecolor="white")
     ax = fig.add_axes([0.03, 0.1, 0.58, 0.82])
@@ -84,8 +137,8 @@ def main():
     ax.axis("off")
 
     k = 0
-    for clave in ORDEN:
-        for _ in range(combos[clave]):
+    for clave, n in combos.items():
+        for _ in range(n):
             fila, col = divmod(k, 10)
             icono(ax, col * 1.6, 8.4 - fila * 2.1, colores(clave))
             k += 1
@@ -100,9 +153,9 @@ def main():
             ha="center", va="center", fontsize=13, color="white", weight="bold")
     items = [
         (TEAL, "Vive en zona rural", tot["rural"]),
-        (AMARILLO, "Vive en Lima Metropolitana", tot["lima"]),
         (AZUL, "Lengua materna quechua, aimara\nu otra nativa", tot["nativa"]),
         (ROJO, "No terminó la secundaria", tot["sin_secundaria"]),
+        (AMARILLO, etiqueta_extra, tot["extra"]),
         (GRIS, "Ninguna de las anteriores", tot["ninguna"]),
     ]
     y = 7.3
@@ -115,19 +168,17 @@ def main():
                 color="#777")
         y -= 1.45
     lg.text(0.1, y + 0.35,
-            "Un ícono con varios colores reúne varias\ncaracterísticas. Ninguna de las anteriores: "
-            "vive en\notra ciudad, su lengua materna es el castellano\ny terminó la secundaria.",
+            "Un ícono con varios colores reúne varias\ncaracterísticas.",
             va="top", fontsize=9.5, color="#555", style="italic")
 
-    fig.text(0.03, 0.03, "Nota: adultos de 25 años o más en hogares en situación de pobreza "
+    fig.text(0.03, 0.03, nota_extra + "Nota: adultos de 25 años o más en hogares en situación de pobreza "
              "monetaria. Ponderado con el factor de población (FACPOB07).\n"
              "Fuente: INEI, Encuesta Nacional de Hogares (ENAHO) 2025.",
              fontsize=9, color="#444")
-    fig.savefig(SALIDA / "iconos_adultos_pobres_2025.png", dpi=170, facecolor="white")
-
-    for clave in ORDEN:
-        print(clave, combos[clave])
-    print({k: (n, round(p, 1)) for k, (n, p) in tot.items()})
+    fig.savefig(SALIDA / f"iconos_adultos_pobres_2025_{variante}.png", dpi=170,
+                facecolor="white")
+    plt.close(fig)
+    print(variante, {k: (n, round(p, 1)) for k, (n, p) in tot.items()})
 
 
 if __name__ == "__main__":
